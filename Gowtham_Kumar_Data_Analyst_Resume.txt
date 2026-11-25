@@ -1,0 +1,110 @@
+================================================================================
+M. GOWTHAM KUMAR
+Aspiring Data Analyst | B.Tech Artificial Intelligence & Data Science
+Location: Arcot, Ranipet District, Tamil Nadu
+Phone: 6374475747
+Email: gowthamhari888@gmail.com
+LinkedIn: https://linkedin.com/in/gowthamhari07
+GitHub: https://github.com/Gowthamkumar598
+================================================================================
+
+PROFESSIONAL SUMMARY
+--------------------------------------------------------------------------------
+Detail-oriented and mathematically grounded undergraduate student pursuing 
+B.Tech in Artificial Intelligence and Data Science at Annaimira College of 
+Engineering and Technology (graduating in 2027). Passionate about bridging raw 
+datasets with clear business insights through relational database modeling, 
+exploratory data analysis, and visual dashboards. 
+
+Possesses core technical proficiency in SQL, Python, Microsoft Excel, and 
+Machine Learning Basics, complemented by a standout key strength in Leadership, 
+effective team management, clear technical communication, and structured problem 
+solving. Seeking an entry-level Data Analyst role or internship to create 
+actionable business value.
+
+--------------------------------------------------------------------------------
+EDUCATION
+--------------------------------------------------------------------------------
+Bachelor of Technology (B.Tech) - Artificial Intelligence & Data Science
+Annaimira College of Engineering and Technology, Tamil Nadu, India
+Expected Graduation: 2027
+
+Key Academic Coursework:
+* Database Management Systems (DBMS) - Relational algebra, normalization (1NF-3NF)
+* Applied Probability & Statistics - Distributions, hypothesis testing, p-values
+* Data Structures & Algorithms - Complexity analysis, arrays, trees, search/sort
+* Python for Data Analysis - Pandas, NumPy, data wrangling, cleaning pipelines
+* Data Mining & Warehousing - ETL processes, star schemas, OLAP cubes
+* Foundations of Artificial Intelligence & Machine Learning
+
+--------------------------------------------------------------------------------
+TECHNICAL SKILLS
+--------------------------------------------------------------------------------
+* Relational Databases: SQL (Complex Queries, Multi-table JOINs, GROUP BY, CTEs,
+                        Window Functions [ROW_NUMBER, RANK, DENSE_RANK], Subqueries)
+* Programming & EDA:    Python (Pandas, NumPy, Matplotlib, Seaborn, Data Cleaning)
+* Spreadsheets:         Microsoft Excel (XLOOKUP, VLOOKUP, Pivot Tables, 
+                        Conditional Formatting, Data Validation, Summary Models)
+* Machine Learning:     Machine Learning Basics (Supervised & Unsupervised Learning,
+                        Train/Test Splits, Feature Scaling, Regression, Classification)
+
+--------------------------------------------------------------------------------
+SOFT SKILLS & LEADERSHIP
+--------------------------------------------------------------------------------
+* LEADERSHIP (Key Core Strength): Natural initiative to align project visions, 
+  motivate peers, delegate tasks effectively, and drive project milestones to completion.
+* Team Management: Workflow scheduling, progress tracking, and structured coordination.
+* Communication: Clear data storytelling; presenting quantitative findings to both 
+  technical peers and non-technical stakeholders.
+* Teamwork: Cross-functional collaboration, active listening, and collective achievement.
+* Problem Solving: Root-cause identification, hypothesis testing, and structured thinking.
+* Adaptability: Quick turnaround in learning new analytic tools and embracing changing requirements.
+
+--------------------------------------------------------------------------------
+ACADEMIC & PORTFOLIO PROJECTS
+--------------------------------------------------------------------------------
+1. Retail Sales & Revenue Performance Dashboard
+   Technologies: Power BI, DAX, Microsoft Excel
+   * Cleaned and transformed 24 months of multi-regional sales records in Excel,
+     resolving missing records and standardizing categories.
+   * Constructed star-schema relationship models in Power BI linking sales fact 
+     tables with Customers, Products, and Calendar dimension tables.
+   * Formulated DAX measures for Year-over-Year (YoY) Sales Growth, Cumulative YTD 
+     Revenue, and Gross Profit Margin %.
+   * Designed executive visual slicers enabling regional drill-downs and product 
+     category margin analysis.
+
+2. Customer Churn & Behavioral Pattern Analysis
+   Technologies: Python, Pandas, Seaborn, Matplotlib, NumPy
+   * Performed end-to-end Exploratory Data Analysis (EDA) on 7,000+ subscription 
+     records to uncover behavioral indicators linked to customer churn.
+   * Addressed missing numeric fields, normalized skewed tenure distributions, 
+     and generated Seaborn correlation matrices.
+   * Identified key customer churn trends across contract types, showing that 
+     month-to-month contracts had significantly higher attrition risk than annual tiers.
+
+3. E-Commerce Relational Database & SQL Analytics
+   Technologies: SQL (PostgreSQL / MySQL)
+   * Designed a normalized 3NF relational database schema for an e-commerce platform 
+     including Users, Products, Orders, and Order Items tables.
+   * Wrote multi-table JOINs, subqueries, and Common Table Expressions (CTEs) 
+     to evaluate repeat purchase rates and average order values.
+   * Implemented Window Functions (LAG, DENSE_RANK) to track days elapsed between 
+     subsequent customer orders and rank customers by cumulative spending.
+
+4. Interactive Data Metrics & Portfolio Portal
+   Technologies: HTML5, CSS3, JavaScript
+   * Built a fast, responsive, zero-dependency analytics portfolio website 
+     featuring modern glassmorphism styling in Electric Blue and Mint (#101820 background).
+   * Implemented dynamic project categorization, interactive case study modals, 
+     print-ready resume generation, and mailto contact integration.
+
+--------------------------------------------------------------------------------
+CONTACT & PORTFOLIO
+--------------------------------------------------------------------------------
+* Phone:    6374475747
+* Email:    gowthamhari888@gmail.com
+* LinkedIn: https://linkedin.com/in/gowthamhari07
+* GitHub:   https://github.com/Gowthamkumar598
+* Location: Arcot, Ranipet District, Tamil Nadu
+================================================================================
