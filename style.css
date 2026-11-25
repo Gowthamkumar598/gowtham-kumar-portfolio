@@ -1383,6 +1383,11 @@ body {
   gap: 32px;
 }
 
+.projects-grid.single-project {
+  grid-template-columns: minmax(0, 680px);
+  justify-content: center;
+}
+
 .project-card {
   background: var(--bg-card);
   backdrop-filter: blur(14px);

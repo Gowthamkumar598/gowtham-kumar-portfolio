@@ -73,32 +73,22 @@ gowtham-kumar-portfolio/
   - Dynamic status badge: *Available for Data Analyst Opportunities & Internships* with pulsing mint indicator.
   - Animated dynamic typewriter introducing key data analyst specializations.
   - Profile portrait framed with glowing electric blue & mint circular border (`#258BFF` / `#8CF5D0`) and orbital animations.
-  - Floating tech chips (`SQL Queries`, `Machine Learning Basics`, `Python • EDA`, `Microsoft Excel`).
+  - Floating tech chips (`SQL (Basic)`, `ML Fundamentals`, `Python (Basic)`, `Excel (Basic)`).
   - Direct social link bar (GitHub, LinkedIn, Email).
   - Quick action buttons (Explore Projects, Download Resume).
 - **About Me**:
   - Analytical philosophy and data storytelling approach.
   - JSON-styled developer card highlighting key profile attributes.
-- **Technical Skills**:
-  - **SQL** (Database querying, CTEs, Joins, Window Functions, Data Integrity)
-  - **Python** (Pandas, NumPy, Seaborn, Matplotlib, Data Cleaning, EDA)
-  - **Microsoft Excel** (Pivot Tables, XLOOKUP, Data Validation, Tabular Modeling)
-  - **Machine Learning Basics** (Supervised/Unsupervised Algorithms, Feature Preprocessing, Model Evaluation)
+- **Floating Tech Chips & Skills**:
+  - **Excel** (Basic)
+  - **Python** (Basic)
+  - **SQL** (Basic)
+  - **Machine Learning** (Basic Fundamentals)
 - **Soft Skills & Leadership**:
-  - **Leadership** (Highlighted as Key Core Strength with custom badge & glow)
-  - **Team Management** (Task pipelines, workflow planning, milestone tracking)
-  - **Communication** (Data storytelling, presentations, active listening)
-  - **Teamwork** (Cross-functional collaboration, knowledge sharing, mutual support)
-  - **Problem Solving** (Hypothesis testing, root cause analysis, structured logic)
-  - **Adaptability** (Rapid learning agility, resilient pivoting, continuous growth)
-- **Projects Showcase**:
-  - Interactive category filtering (*All, Power BI & Excel, Python & EDA, SQL Analytics, Web Interface*).
-  - Four realistic data analytics projects with custom visual preview banners:
-    1. *Retail Sales & Revenue Performance Dashboard* (Power BI & Excel)
-    2. *Customer Churn & Behavioral Pattern Analysis* (Python & Seaborn)
-    3. *E-Commerce Relational Database & SQL Analytics* (SQL - Relational Joins & CTEs)
-    4. *Interactive Data Metrics & Portfolio Portal* (HTML, CSS, JS)
-  - Interactive "View Details" modal popup providing problem statements, methodology, code/DAX snippets, and key findings.
+  - **Leadership** (Highlighted with Cricket Team Captain experience)
+  - **Team Management**, **Communication**, **Teamwork**, **Problem Solving**, **Adaptability**
+- **Academic Project**:
+  - **Hotel Booking and Cancellation Analysis** with an interactive "View Details" case-study modal.
 - **Education**:
   - **Bachelor of Technology (B.Tech)** in **Artificial Intelligence and Data Science**
   - **Annaimira College of Engineering and Technology**

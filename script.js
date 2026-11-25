@@ -36,11 +36,10 @@ function initTypewriter() {
   if (!typingElement) return;
 
   const roles = [
-    'Data Analyst',
+    'Aspiring Data Analyst',
     'B.Tech AI & Data Science Student',
-    'Power BI & SQL Specialist',
-    'Python & EDA Enthusiast',
-    'Business Intelligence Builder'
+    'SQL & Python Learner',
+    'Excel & Data Analysis Enthusiast'
   ];
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -231,138 +230,27 @@ function initProjectFilters() {
    6. PROJECT CASE STUDY MODALS
    ========================================================================== */
 const projectDetailsData = {
-  'modal-sales': {
-    tag: 'Power BI &bull; Excel &bull; DAX Modeling',
-    title: 'Retail Sales & Revenue Performance Dashboard',
-    overview: 'This project simulates an enterprise retail environment analyzing two years of granular transaction records. The primary goal was to uncover hidden revenue bottlenecks, regional performance gaps, and product-line profitability margins.',
+  'modal-hotel': {
+    tag: 'Academic Project &bull; Excel (Basic) &bull; Python (Basic) &bull; SQL (Basic)',
+    title: 'Hotel Booking and Cancellation Analysis',
+    overview: 'An academic data analysis project exploring hotel booking records to understand reservation patterns, booking lead times, and key factors associated with booking cancellations.',
     approach: [
-      '<strong>Data Cleaning & Transformation:</strong> Cleaned raw sales records using Microsoft Excel (resolving duplicate transactions, validating date hierarchies, and standardizing product categories).',
-      '<strong>Star-Schema Data Modeling:</strong> Built dimensional relationship models in Power BI linking fact sales tables with dimension tables (Customers, Products, Geography, Calendar).',
-      '<strong>Custom DAX Measures:</strong> Authored calculated metrics including Year-over-Year (YoY) Sales Growth, Cumulative YTD Sales, Profit Margin %, and Average Order Value (AOV).',
-      '<strong>Interactive Visual Slicers:</strong> Designed dynamic date sliders, regional drill-downs, and category filters for executive review.'
+      '<strong>Data Preparation (Excel &amp; Python):</strong> Reviewed raw hotel reservation records, checked for missing or inconsistent entries, and organized booking attributes.',
+      '<strong>Basic SQL Querying:</strong> Grouped bookings by cancellation status, customer type, and arrival period to summarize reservation counts.',
+      '<strong>Pattern Comparison:</strong> Compared confirmed vs. canceled bookings across lead times and seasonal periods to spot high-cancellation segments.'
     ],
-    codeTitle: 'Sample DAX Measure (YoY Sales Variance & Margin):',
-    codeSnippet: `// DAX Measure: Year-Over-Year Sales Variance
-YoY_Sales_Variance = 
-VAR CurrentYearSales = [Total_Revenue]
-VAR PriorYearSales = CALCULATE([Total_Revenue], SAMEPERIODLASTYEAR('Calendar'[Date]))
-RETURN
-    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
-
-// DAX Measure: Gross Profit Margin Percentage
-Profit_Margin_% = 
-DIVIDE([Total_Revenue] - [Total_COGS], [Total_Revenue], 0)`,
+    codeTitle: 'Sample Basic SQL Summary Query:',
+    codeSnippet: `-- Compare confirmed vs. canceled bookings by hotel type
+SELECT
+    hotel,
+    is_canceled,
+    COUNT(*) AS total_bookings
+FROM hotel_bookings
+GROUP BY hotel, is_canceled
+ORDER BY hotel, is_canceled;`,
     findings: [
-      'Highlighted that the Top 20% of product SKUs contributed to 68% of gross profitability.',
-      'Identified an unexpected 18% decline in Q3 regional sales due to supply chain delivery delays.',
-      'Recommended promotional realignment that boosted estimated category basket size by 12%.'
-    ]
-  },
-
-  'modal-churn': {
-    tag: 'Python &bull; Pandas &bull; Seaborn &bull; EDA',
-    title: 'Customer Churn & Behavioral Pattern Analysis',
-    overview: 'An exploratory data analysis investigation into customer attrition factors within a subscription services model. The analysis isolates behavioral patterns, service contract dependencies, and monthly spend correlations.',
-    approach: [
-      '<strong>Data Ingestion & Integrity Check:</strong> Loaded 7,000+ records via Python Pandas, handled empty numerical fields in total charges, and encoded categorical variables.',
-      '<strong>Exploratory Data Distribution:</strong> Plotted statistical distributions (histograms, box plots) to analyze customer tenure vs. monthly recurring charges.',
-      '<strong>Correlation & Heatmap Analysis:</strong> Utilized Seaborn to construct correlation matrices highlighting features with strong correlation to churn events.',
-      '<strong>Cohort Segmentation:</strong> Evaluated retention rates across contract tiers (Month-to-Month vs. One-Year vs. Two-Year).'
-    ],
-    codeTitle: 'Python Analysis Snippet (Pandas & Seaborn):',
-    codeSnippet: `import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Load dataset and clean empty values
-df = pd.read_csv('telecom_churn_data.csv')
-df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
-df.dropna(inplace=True)
-
-# Calculate churn distribution by contract duration
-churn_by_contract = df.groupby('Contract')['Churn'].value_counts(normalize=True).unstack()
-print("Churn Rate by Contract:\\n", churn_by_contract['Yes'])
-
-# Plot correlation heatmap
-plt.figure(figsize=(10, 6))
-sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='Reds', fmt='.2f')
-plt.title("Correlation Matrix of Behavioral Attributes")
-plt.tight_layout()`,
-    findings: [
-      'Month-to-month contract holders exhibited a 42.7% churn rate, compared to under 11% for annual contract holders.',
-      'First 6 months of customer tenure represent the highest vulnerability window for customer attrition.',
-      'Customers with paperless billing and electronic check payments exhibited higher sensitivity to price adjustments.'
-    ]
-  },
-
-  'modal-sql': {
-    tag: 'SQL &bull; Relational Schema &bull; Analytics Queries',
-    title: 'E-Commerce Relational Database & SQL Analytics',
-    overview: 'Designed a comprehensive relational schema for an online retail platform and formulated complex analytical queries to extract critical business KPIs, order velocity, and customer loyalty cohorts.',
-    approach: [
-      '<strong>Schema Architecture:</strong> Constructed normalized relational tables (Customers, Orders, Order_Items, Products, Categories) with appropriate primary and foreign key constraints.',
-      '<strong>Data Wrangling & Joins:</strong> Executed multi-table INNER and LEFT JOINs to aggregate transaction frequency and order basket values.',
-      '<strong>Advanced Window Functions:</strong> Implemented DENSE_RANK(), ROW_NUMBER(), and LAG()/LEAD() to compute days elapsed between repeat orders.',
-      '<strong>Common Table Expressions (CTEs):</strong> Structured multi-step queries for customer cohort analysis and revenue contribution deciles.'
-    ],
-    codeTitle: 'Advanced SQL Query (Customer Order Velocity & Ranking):',
-    codeSnippet: `-- Calculate Days Elapsed Between Consecutive Orders per Customer
-WITH CustomerOrders AS (
-    SELECT 
-        customer_id,
-        order_id,
-        order_date,
-        total_amount,
-        LAG(order_date, 1) OVER (
-            PARTITION BY customer_id 
-            ORDER BY order_date
-        ) AS previous_order_date
-    FROM orders
-)
-SELECT 
-    customer_id,
-    order_id,
-    order_date,
-    previous_order_date,
-    (order_date - previous_order_date) AS days_between_orders,
-    DENSE_RANK() OVER (ORDER BY total_amount DESC) AS revenue_rank
-FROM CustomerOrders
-WHERE previous_order_date IS NOT NULL
-ORDER BY days_between_orders ASC
-LIMIT 10;`,
-    findings: [
-      'Repeat customers represented 28% of user base but generated 59% of overall platform revenue.',
-      'Average repurchase cycle was 26 days for fast-moving consumer goods vs. 78 days for electronics.',
-      'Query execution speed was improved by adding targeted B-Tree indexes on customer_id and order_date columns.'
-    ]
-  },
-
-  'modal-web': {
-    tag: 'HTML5 &bull; CSS3 &bull; JavaScript &bull; UI/UX',
-    title: 'Interactive Data Metrics & Portfolio Portal',
-    overview: 'A lightweight, performance-focused web analytics portal engineered to present data analysis findings, interactive data tables, and dynamic visual summaries in a responsive browser experience.',
-    approach: [
-      '<strong>Semantic Structure:</strong> Developed cleanly structured HTML5 layouts adhering to W3C accessibility guidelines and semantic landmark standards.',
-      '<strong>CSS Glassmorphism & Electric Blue/Mint Palette:</strong> Applied modern dark-mode styling utilizing CSS custom properties, grid layouts, and smooth micro-animations.',
-      '<strong>Lightweight Interactivity:</strong> Built responsive filtering, dynamic modal overlays, and print-ready resume rendering with vanilla JavaScript without bulky frameworks.',
-      '<strong>Cross-Device Compatibility:</strong> Rigorously optimized for seamless navigation across mobile phones, tablets, and high-resolution desktop monitors.'
-    ],
-    codeTitle: 'Vanilla JavaScript Dynamic Filtering Snippet:',
-    codeSnippet: `// Dynamic Filter Handler without external dependencies
-function filterProjects(selectedCategory) {
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach(card => {
-    const cardCategory = card.getAttribute('data-category');
-    const isVisible = (selectedCategory === 'all' || cardCategory === selectedCategory);
-    
-    card.style.opacity = isVisible ? '1' : '0';
-    card.style.display = isVisible ? 'flex' : 'none';
-  });
-}`,
-    findings: [
-      'Zero dependency footprint ensures lightning-fast load times and instant rendering.',
-      'Built-in browser print styling enables recruiters to save or print clean PDF resumes directly from the portal.',
-      'Fully responsive UI tested across mobile, tablet, and widescreen viewports.'
+      'Observed how booking lead times and seasonal demand relate to reservation cancellation patterns.',
+      'Practiced translating raw tabular reservation records into clear, structured summaries using basic Excel, Python, and SQL.'
     ]
   }
 };
@@ -554,38 +442,27 @@ Relevant Coursework:
 - Data Mining & Warehousing
 - Foundations of Artificial Intelligence
 
-SKILLS & COMPETENCIES
+SKILLS & LEADERSHIP
 --------------------------------------------------------------------------------
 Technical Skills:
-* SQL: Relational queries, Joins, Aggregations, GROUP BY, Window Functions, Subqueries, CTEs
-* Python: Data Wrangling, Exploratory Data Analysis (EDA), Pandas, NumPy, Matplotlib, Seaborn
-* Microsoft Excel: XLOOKUP/VLOOKUP, Pivot Tables, Conditional Formatting, Data Validation, Tabular Modeling
-* Machine Learning Basics: Supervised & Unsupervised Learning, Feature Preprocessing, Model Evaluation
+* Excel (Basic): Spreadsheets, basic formulas, sorting, filtering & tabular organization
+* Python (Basic): Core syntax, data structures, loops & introductory data handling
+* SQL (Basic): SELECT, WHERE, ORDER BY, GROUP BY & basic table joins
+* Machine Learning (Basic Fundamentals): Supervised & unsupervised concepts, train-test splits
 
-Soft Skills:
-* Leadership (Key Core Strength): Initiative, strategic vision, peer mentorship & project direction
+Leadership & Soft Skills:
+* Leadership (Cricket Team Captain): Match strategy, team motivation, role coordination & calm decision-making
 * Team Management: Workflow coordination, milestone tracking & team alignment
-* Communication: Quantitative storytelling, executive presentations & active listening
+* Communication: Clear data explanations & active listening
 * Teamwork: Cross-functional collaboration, knowledge sharing & mutual support
-* Problem Solving: Hypothesis testing, root cause analysis & structured problem decomposition
-* Adaptability: Rapid technical mastery, agile pivoting & continuous learning
+* Problem Solving: Structured breakdown & root-cause thinking
+* Adaptability: Continuous learning & composure through changes
 
-FEATURED PROJECTS
+ACADEMIC PROJECT
 --------------------------------------------------------------------------------
-1. Retail Sales & Revenue Performance Dashboard (Power BI & Excel)
-   - Multi-page interactive dashboard tracking monthly sales revenue, profit margins, and regional performance.
-   - Built custom DAX measures for YoY revenue growth, profit margins, and cumulative volume.
-
-2. Customer Churn & Behavioral Pattern Analysis (Python & EDA)
-   - Conducted exploratory data analysis on 7,000+ subscription records to identify key churn drivers.
-   - Evaluated correlation matrices and contract tiers (Month-to-Month vs Annual) with Seaborn.
-
-3. E-Commerce Relational Database & SQL Analytics (SQL - PostgreSQL/MySQL)
-   - Designed a normalized relational schema for customers, orders, and products.
-   - Formulated CTEs and Window Functions (DENSE_RANK, LAG) to measure customer repurchase velocity.
-
-4. Interactive Data Metrics & Portfolio Portal (HTML, CSS & JavaScript)
-   - Developed a responsive, deep charcoal (#101820) portfolio interface with Electric Blue & Mint styling for showcasing data deliverables.
+1. Hotel Booking and Cancellation Analysis (Excel, Python, SQL - Basic)
+   - Analyzed hotel reservation records to compare confirmed bookings vs. cancellations across booking windows and customer segments.
+   - Practiced data cleaning, grouping, and summarizing cancellation patterns using basic Excel, Python, and SQL.
 ================================================================================`;
 
   const blob = new Blob([resumeText], { type: 'text/plain;charset=utf-8' });
